@@ -21,7 +21,7 @@ public enum ServiceType {
 	TACKER("tacker", "nfv-orchestration"),
 	UNKNOWN("NA", "NA"),
 	BAREMETAL("ironic", "baremetal"),
-//    GNOCCHI("gnocchi", "metric")
+    GNOCCHI("gnocchi", "metric")
 	;
 
 	private final String serviceName;
