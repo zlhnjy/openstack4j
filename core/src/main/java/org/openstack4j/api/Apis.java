@@ -12,6 +12,7 @@ import org.openstack4j.api.sahara.SaharaService;
 import org.openstack4j.api.senlin.SenlinService;
 import org.openstack4j.api.trove.TroveService;
 import org.openstack4j.api.tacker.TackerService;
+import org.openstack4j.api.bareMetal.BareMetalService;
 
 import java.util.ServiceLoader;
 
@@ -173,5 +174,9 @@ public class Apis {
         APIProvider p = ServiceLoader.load(APIProvider.class, Apis.class.getClassLoader()).iterator().next();
         p.initialize();
         return p;
+    }
+
+    public static BareMetalService getBareMetalServices() {
+        return get(BareMetalService.class);
     }
 }

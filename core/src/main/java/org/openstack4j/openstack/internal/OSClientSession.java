@@ -36,6 +36,7 @@ import org.openstack4j.model.identity.v3.Token;
 import org.openstack4j.openstack.identity.internal.DefaultEndpointURLResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.openstack4j.api.bareMetal.BareMetalService;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -196,6 +197,10 @@ public abstract class OSClientSession<R, T extends OSClient<T>> implements Endpo
      */
     public BarbicanService barbican() {
         return Apis.getBarbicanServices();
+    }
+
+    public BareMetalService bareMetal() {
+        return Apis.getBareMetalServices();
     }
 
     /**

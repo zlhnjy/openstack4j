@@ -150,6 +150,10 @@ import org.openstack4j.api.trove.InstanceService;
 import org.openstack4j.api.trove.TroveService;
 import org.openstack4j.openstack.barbican.internal.BarbicanServiceImpl;
 import org.openstack4j.openstack.barbican.internal.ContainerServiceImpl;
+import org.openstack4j.openstack.bareMetal.internal.BareMetalServiceImpl;
+import org.openstack4j.openstack.bareMetal.internal.ChassisServiceImpl;
+import org.openstack4j.openstack.bareMetal.internal.DriverServiceImpl;
+import org.openstack4j.openstack.bareMetal.internal.NodeServiceImpl;
 import org.openstack4j.openstack.compute.internal.ComputeFloatingIPServiceImpl;
 import org.openstack4j.openstack.compute.internal.ComputeImageServiceImpl;
 import org.openstack4j.openstack.compute.internal.ComputeSecurityGroupServiceImpl;
@@ -291,6 +295,10 @@ import org.openstack4j.openstack.trove.internal.DBFlavorServiceImpl;
 import org.openstack4j.openstack.trove.internal.DBInstanceServiceImpl;
 import org.openstack4j.openstack.trove.internal.DBUserServiceImpl;
 import org.openstack4j.openstack.trove.internal.TroveServiceImpl;
+import org.openstack4j.api.bareMetal.BareMetalService;
+import org.openstack4j.api.bareMetal.ChassisService;
+import org.openstack4j.api.bareMetal.DriverService;
+import org.openstack4j.api.bareMetal.NodeService;
 
 import com.google.common.collect.Maps;
 
@@ -470,6 +478,12 @@ public class DefaultAPIProvider implements APIProvider {
         bind(TelemetryAodhService.class,TelemetryAodhServiceImpl.class);
         bind(AlarmAodhService.class, AlarmAodhServiceImpl.class);
         bind(ServicesService.class, ServicesServiceImpl.class);
+
+        bind(BareMetalService.class, BareMetalServiceImpl.class);
+        bind(ChassisService.class, ChassisServiceImpl.class);
+        bind(DriverService.class, DriverServiceImpl.class);
+        bind(NodeService.class, NodeServiceImpl.class);
+        bind(org.openstack4j.api.bareMetal.PortService.class, org.openstack4j.openstack.bareMetal.internal.PortServiceImpl.class);
     }
 
     /**

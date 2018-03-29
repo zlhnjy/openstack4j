@@ -2,6 +2,8 @@ package org.openstack4j.api;
 
 import org.openstack4j.model.barbican.builder.ContainerCreateBuilder;
 import org.openstack4j.model.barbican.builder.ContainerSecretBuilder;
+import org.openstack4j.model.bareMetal.builder.BareMetalBuilders;
+import org.openstack4j.model.bareMetal.builder.ChassisBuilder;
 import org.openstack4j.model.common.builder.LinkBuilder;
 import org.openstack4j.model.compute.builder.*;
 import org.openstack4j.model.gbp.builder.ExternalPolicyBuilder;
@@ -44,6 +46,7 @@ import org.openstack4j.model.telemetry.builder.TelemetryBuilders;
 import org.openstack4j.model.trove.builder.DBServiceBuilders;
 import org.openstack4j.openstack.barbican.domain.BarbicanContainer;
 import org.openstack4j.openstack.barbican.domain.BarbicanContainerSecret;
+import org.openstack4j.openstack.bareMetal.domain.BareMetalChassis;
 import org.openstack4j.openstack.common.GenericLink;
 import org.openstack4j.openstack.compute.builder.NovaBuilders;
 import org.openstack4j.openstack.compute.domain.*;
@@ -1117,5 +1120,9 @@ public class Builders {
      */
     public static EnvironmentBuilder environment() {
         return MuranoEnvironment.builder();
+    }
+
+    public static BareMetalBuilders bareMetal() {
+        return new org.openstack4j.openstack.bareMetal.builder.BareMetalBuilders();
     }
 }

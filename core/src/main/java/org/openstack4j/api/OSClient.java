@@ -20,6 +20,7 @@ import org.openstack4j.api.types.Facing;
 import org.openstack4j.api.types.ServiceType;
 import org.openstack4j.model.identity.v2.Access;
 import org.openstack4j.model.identity.v3.Token;
+import org.openstack4j.api.bareMetal.BareMetalService;
 
 import java.util.Set;
 
@@ -297,5 +298,12 @@ public interface OSClient< T extends OSClient<T>> {
      * @return the Barbican service
      */
     BarbicanService barbican();
+
+    /**
+     * Returns the Bare Metal Service API
+     *
+     * @return the Bare Metal service
+     */
+    BareMetalService bareMetal();
 
 }
