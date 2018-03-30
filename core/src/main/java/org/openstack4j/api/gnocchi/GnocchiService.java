@@ -8,4 +8,7 @@ import org.openstack4j.common.RestService;
  * @author zhangliang
  */
 public interface GnocchiService extends RestService {
+
+
+
 }
