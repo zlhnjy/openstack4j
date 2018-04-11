@@ -9,6 +9,6 @@ import org.openstack4j.common.RestService;
  */
 public interface GnocchiService extends RestService {
 
-
+    ResourceService resource();
 
 }

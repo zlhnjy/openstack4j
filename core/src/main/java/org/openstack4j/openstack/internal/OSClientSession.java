@@ -12,6 +12,7 @@ import org.openstack4j.api.barbican.BarbicanService;
 import org.openstack4j.api.client.CloudProvider;
 import org.openstack4j.api.compute.ComputeService;
 import org.openstack4j.api.gbp.GbpService;
+import org.openstack4j.api.gnocchi.GnocchiService;
 import org.openstack4j.api.heat.HeatService;
 import org.openstack4j.api.identity.EndpointURLResolver;
 import org.openstack4j.api.image.ImageService;
@@ -201,6 +202,10 @@ public abstract class OSClientSession<R, T extends OSClient<T>> implements Endpo
 
     public BareMetalService bareMetal() {
         return Apis.getBareMetalServices();
+    }
+
+    public GnocchiService gnocchi(){
+        return Apis.getGnocchiServices();
     }
 
     /**

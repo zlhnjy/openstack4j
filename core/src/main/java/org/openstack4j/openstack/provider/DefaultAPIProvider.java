@@ -41,6 +41,7 @@ import org.openstack4j.api.gbp.PolicyRuleSetService;
 import org.openstack4j.api.gbp.PolicyTargetService;
 import org.openstack4j.api.gbp.ServiceProfileService;
 import org.openstack4j.api.gbp.ServicechainService;
+import org.openstack4j.api.gnocchi.GnocchiService;
 import org.openstack4j.api.heat.EventsService;
 import org.openstack4j.api.heat.HeatService;
 import org.openstack4j.api.heat.ResourcesService;
@@ -189,6 +190,7 @@ import org.openstack4j.openstack.gbp.internal.PolicyRuleSetServiceImpl;
 import org.openstack4j.openstack.gbp.internal.PolicyTargetServiceImpl;
 import org.openstack4j.openstack.gbp.internal.ServiceProfileServiceImpl;
 import org.openstack4j.openstack.gbp.internal.ServicechainServiceImpl;
+import org.openstack4j.openstack.gnocchi.internal.GnocchiServiceImpl;
 import org.openstack4j.openstack.heat.internal.EventsServiceImpl;
 import org.openstack4j.openstack.heat.internal.HeatServiceImpl;
 import org.openstack4j.openstack.heat.internal.ResourcesServiceImpl;
@@ -484,6 +486,10 @@ public class DefaultAPIProvider implements APIProvider {
         bind(DriverService.class, DriverServiceImpl.class);
         bind(NodeService.class, NodeServiceImpl.class);
         bind(org.openstack4j.api.bareMetal.PortService.class, org.openstack4j.openstack.bareMetal.internal.PortServiceImpl.class);
+
+        bind(GnocchiService.class, GnocchiServiceImpl.class);
+        bind(org.openstack4j.api.gnocchi.ResourceService.class, org.openstack4j.openstack.gnocchi.internal.ResourceServiceImpl.class);
+
     }
 
     /**
