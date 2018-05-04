@@ -7,4 +7,10 @@ public interface NodeManagementBuilder extends Buildable.Builder<NodeManagementB
 
     NodeManagementBuilder target(String target);
 
+    NodeManagementBuilder bootDevice(String bootDevice);
+
+    NodeManagementBuilder persistent(Boolean persistent);
+
+    NodeManagementBuilder enabled(Boolean enabled);
+
 }
