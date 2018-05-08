@@ -7,6 +7,7 @@ import org.openstack4j.model.bareMetal.NodeValidate;
 import org.openstack4j.model.common.ActionResponse;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * bare metal nodes service
@@ -36,6 +37,8 @@ public interface NodeService {
     ActionResponse setConsole(String nodeIdent, NodeManagement nodeManagement);
 
     ActionResponse setProvision(String nodeIdent, NodeManagement nodeManagement);
+
+    ActionResponse setProvision(String nodeIdent, NodeManagement nodeManagement, Map<String, Object> headers);
 
     NodeValidate validate(String nodeIdent);
 
